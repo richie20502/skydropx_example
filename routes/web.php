@@ -19,4 +19,8 @@ Route::get('/', function () {
 });
 
 
-Route::post('/quotations', [SkydropxController::class, 'getQuotation']);
+Route::get('/quotation-form', function () {
+    return view('quotation-form');
+});
+
+Route::post('/quotations', [SkydropxController::class, 'getQuotation'])->name('get.quotation');
