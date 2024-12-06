@@ -19,8 +19,14 @@ Route::get('/', function () {
 });
 
 
+Route::get('/shipment-form', function () {
+    return view('shipment/shipment-form');
+});
+Route::post('/generate-shipment', [SkydropxController::class, 'generateShipment'])->name('generate.shipment');
+
+
 Route::get('/quotation-form', function () {
-    return view('quotation-form');
+    return view('quotation/quotation-form');
 });
 
 Route::post('/quotations', [SkydropxController::class, 'getQuotation'])->name('get.quotation');
