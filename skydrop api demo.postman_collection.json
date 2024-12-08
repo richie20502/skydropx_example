@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "129324f6-9d82-4c43-8bac-44e5ba546fb3",
+		"name": "skydrop api demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25799865"
+	},
+	"item": [
+		{
+			"name": "carriers(Paqueterias)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token token=SXUXOIYMOxSSRk84f-uYCGnhnDsizMII1on7AQTXP48"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://api-demo.skydropx.com//v1/carriers",
+					"protocol": "https",
+					"host": [
+						"api-demo",
+						"skydropx",
+						"com"
+					],
+					"path": [
+						"",
+						"v1",
+						"carriers"
+					]
+				},
+				"description": "Generated from cURL: curl \"https://api-demo.skydropx.com//v1/carriers\" -H \"Authorization: Token token=SXUXOIYMOxSSRk84f-uYCGnhnDsizMII1on7AQTXP48\" -H \"Content-Type: application/json\""
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.skydropx.com/v1/shipments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token token=SXUXOIYMOxSSRk84f-uYCGnhnDsizMII1on7AQTXP48"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"address_from\": {\"province\": \"Ciudad de México\", \"city\": \"Azcapotzalco\", \"name\": \"Jose Fernando\", \"zip\": \"02900\", \"country\": \"MX\", \"address1\": \"Av. Principal #234\", \"company\": \"skydropx\", \"address2\": \"Centro\", \"phone\": \"5555555555\", \"email\": \"skydropx@email.com\"}, \"parcels\": [{ \"weight\": 3, \"distance_unit\": \"CM\", \"mass_unit\": \"KG\", \"height\": 10, \"width\": 10, \"length\": 10 }], \"address_to\": { \"province\": \"Jalisco\", \"city\": \"Guadalajara\", \"name\": \"Jorge Fernández\", \"zip\": \"44100\", \"country\": \"MX\",  \"address1\": \" Av. Lázaro Cárdenas #234\", \"company\": \"-\", \"address2\": \"Americana\", \"phone\": \"5555555555\", \"email\": \"ejemplo@skydropx.com\", \"reference\": \"Frente a tienda de abarro\", \"contents\": \"\" }, \"consignment_note_class_code\": \"53131600\", \"consignment_note_packaging_code\": \"1H1\", \"carriers\": [{ \"name\": \"DHL\" }, { \"name\": \"Fedex\" }] }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-demo.skydropx.com/v1/shipments",
+					"protocol": "https",
+					"host": [
+						"api-demo",
+						"skydropx",
+						"com"
+					],
+					"path": [
+						"v1",
+						"shipments"
+					]
+				},
+				"description": "Generated from cURL: curl \"https://api.skydropx.com/v1/shipments\" \\\r\n-H \"Authorization: Token token=YOUR_API_KEY\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{ \"address_from\": {\"province\": \"Ciudad de México\", \"city\": \"Azcapotzalco\", \"name\": \"Jose Fernando\", \"zip\": \"02900\", \"country\": \"MX\", \"address1\": \"Av. Principal #234\", \"company\": \"skydropx\", \"address2\": \"Centro\", \"phone\": \"5555555555\", \"email\": \"skydropx@email.com\"}, \"parcels\": [{ \"weight\": 3, \"distance_unit\": \"CM\", \"mass_unit\": \"KG\", \"height\": 10, \"width\": 10, \"length\": 10 }], \"address_to\": { \"province\": \"Jalisco\", \"city\": \"Guadalajara\", \"name\": \"Jorge Fernández\", \"zip\": \"44100\", \"country\": \"MX\",  \"address1\": \" Av. Lázaro Cárdenas #234\", \"company\": \"-\", \"address2\": \"Americana\", \"phone\": \"5555555555\", \"email\": \"ejemplo@skydropx.com\", \"reference\": \"Frente a tienda de abarro\", \"contents\": \"\" }, \"consignment_note_class_code\": \"53131600\", \"consignment_note_packaging_code\": \"1H1\", \"carriers\": [{ \"name\": \"DHL\" }, { \"name\": \"Fedex\" }] }'"
+			},
+			"response": []
+		},
+		{
+			"name": "shipments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token token=YOUR_API_KEY"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://api.skydropx.com/v1/shipments",
+					"protocol": "https",
+					"host": [
+						"api",
+						"skydropx",
+						"com"
+					],
+					"path": [
+						"v1",
+						"shipments"
+					]
+				},
+				"description": "Generated from cURL: curl \"https://api.skydropx.com/v1/shipments\" \\\r\n-H \"Authorization: Token token=YOUR_API_KEY\" \\\r\n-H \"Content-Type: application/json\""
+			},
+			"response": []
+		},
+		{
+			"name": "https://api-demo.skydropx.com/v1/shipments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token token=SXUXOIYMOxSSRk84f-uYCGnhnDsizMII1on7AQTXP48"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"address_from\": {\r\n    \"province\": \"Ciudad de México\",\r\n    \"city\": \"Azcapotzalco\",\r\n    \"name\": \"Jose Fernando\",\r\n    \"zip\": \"02900\",\r\n    \"country\": \"MX\",\r\n    \"address1\": \"Av. Principal #234\",\r\n    \"company\": \"skydropx\",\r\n    \"address2\": \"Centro\",\r\n    \"phone\": \"5555555555\",\r\n    \"email\": \"skydropx@email.com\"\r\n  },\r\n  \"parcels\": [{\r\n    \"weight\": 3,\r\n    \"distance_unit\": \"CM\",\r\n    \"mass_unit\": \"KG\",\r\n    \"height\": 10,\r\n    \"width\": 10,\r\n    \"length\": 10,\r\n    \"consignment_note_class_code\": \"53131600\",  // Mercancías generales\r\n    \"consignment_note_packaging_code\": \"1H1\"  // Caja de cartón\r\n  }],\r\n  \"address_to\": {\r\n    \"province\": \"Jalisco\",\r\n    \"city\": \"Guadalajara\",\r\n    \"name\": \"Jorge Fernández\",\r\n    \"zip\": \"44100\",\r\n    \"country\": \"MX\",\r\n    \"address1\": \"Av. Lázaro Cárdenas #234\",\r\n    \"company\": \"-\",\r\n    \"address2\": \"Americana\",\r\n    \"phone\": \"5555555555\",\r\n    \"email\": \"ejemplo@skydropx.com\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-demo.skydropx.com/v1/shipments",
+					"protocol": "https",
+					"host": [
+						"api-demo",
+						"skydropx",
+						"com"
+					],
+					"path": [
+						"v1",
+						"shipments"
+					]
+				},
+				"description": "Generated from cURL: curl --location 'https://api-demo.skydropx.com/v1/shipments' \\\r\n--header 'Authorization: Token token=SXUXOIYMOxSSRk84f-uYCGnhnDsizMII1on7AQTXP48' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\r\n  \"address_from\": {\r\n    \"province\": \"Ciudad de México\",\r\n    \"city\": \"Azcapotzalco\",\r\n    \"name\": \"Jose Fernando\",\r\n    \"zip\": \"02900\",\r\n    \"country\": \"MX\",\r\n    \"address1\": \"Av. Principal #234\",\r\n    \"company\": \"skydropx\",\r\n    \"address2\": \"Centro\",\r\n    \"phone\": \"5555555555\",\r\n    \"email\": \"skydropx@email.com\"\r\n  },\r\n  \"parcels\": [{\r\n    \"weight\": 3,\r\n    \"distance_unit\": \"CM\",\r\n    \"mass_unit\": \"KG\",\r\n    \"height\": 10,\r\n    \"width\": 10,\r\n    \"length\": 10,\r\n    \"consignment_note_class_code\": \"53131600\",  # Código de clase de producto (ejemplo)\r\n    \"consignment_note_packaging_code\": \"1H1\"  # Código de embalaje (ejemplo)\r\n  }],\r\n  \"address_to\": {\r\n    \"province\": \"Jalisco\",\r\n    \"city\": \"Guadalajara\",\r\n    \"name\": \"Jorge Fernández\",\r\n    \"zip\": \"44100\",\r\n    \"country\": \"MX\",\r\n    \"address1\": \"Av. Lázaro Cárdenas #234\",\r\n    \"company\": \"-\",\r\n    \"address2\": \"Americana\",\r\n    \"phone\": \"5555555555\",\r\n    \"email\": \"ejemplo@skydropx.com\"\r\n  }\r\n}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.skydropx.com/v1/shipments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token token=SXUXOIYMOxSSRk84f-uYCGnhnDsizMII1on7AQTXP48"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"address_from\":{\r\n      \"province\":\"Ciudad de México\",\r\n      \"city\":\"Azcapotzalco\",\r\n      \"name\":\"Jose Fernando\",\r\n      \"zip\":\"02900\",\r\n      \"country\":\"MX\",\r\n      \"address1\":\"Av. Principal #234\",\r\n      \"company\":\"skydropx\",\r\n      \"address2\":\"Centro\",\r\n      \"phone\":\"5555555555\",\r\n      \"email\":\"skydropx@email.com\"\r\n   },\r\n   \"parcels\":[\r\n      {\r\n         \"weight\":3,\r\n         \"distance_unit\":\"CM\",\r\n         \"mass_unit\":\"KG\",\r\n         \"height\":10,\r\n         \"width\":10,\r\n         \"length\":10\r\n      }\r\n   ],\r\n   \"address_to\":{\r\n      \"province\":\"Jalisco\",\r\n      \"city\":\"Guadalajara\",\r\n      \"name\":\"Jorge Fernández\",\r\n      \"zip\":\"44100\",\r\n      \"country\":\"MX\",\r\n      \"address1\":\" Av. Lázaro Cárdenas #234\",\r\n      \"company\":\"skydropx\",\r\n      \"address2\":\"Americana\",\r\n      \"phone\":\"5555555555\",\r\n      \"email\":\"ejemplo@skydropx.com\",\r\n      \"reference\":\"Frente a tienda de abarro\",\r\n      \"contents\":\"contexto\"\r\n   },\r\n   \"consignment_note_class_code\":\"53131600\",\r\n   \"consignment_note_packaging_code\":\"1H1\",\r\n   \"carriers\":[\r\n      {\r\n         \"name\":\"DHL\"\r\n      },\r\n      {\r\n         \"name\":\"Fedex\"\r\n      }\r\n   ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-demo.skydropx.com/v1/shipments",
+					"protocol": "https",
+					"host": [
+						"api-demo",
+						"skydropx",
+						"com"
+					],
+					"path": [
+						"v1",
+						"shipments"
+					]
+				},
+				"description": "Generated from cURL: curl \"https://api.skydropx.com/v1/shipments\" \\\r\n-H \"Authorization: Token token=YOUR_API_KEY\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{ \"address_from\": {\"province\": \"Ciudad de México\", \"city\": \"Azcapotzalco\", \"name\": \"Jose Fernando\", \"zip\": \"02900\", \"country\": \"MX\", \"address1\": \"Av. Principal #234\", \"company\": \"skydropx\", \"address2\": \"Centro\", \"phone\": \"5555555555\", \"email\": \"skydropx@email.com\"}, \"parcels\": [{ \"weight\": 3, \"distance_unit\": \"CM\", \"mass_unit\": \"KG\", \"height\": 10, \"width\": 10, \"length\": 10 }], \"address_to\": { \"province\": \"Jalisco\", \"city\": \"Guadalajara\", \"name\": \"Jorge Fernández\", \"zip\": \"44100\", \"country\": \"MX\",  \"address1\": \" Av. Lázaro Cárdenas #234\", \"company\": \"-\", \"address2\": \"Americana\", \"phone\": \"5555555555\", \"email\": \"ejemplo@skydropx.com\", \"reference\": \"Frente a tienda de abarro\", \"contents\": \"\" }, \"consignment_note_class_code\": \"53131600\", \"consignment_note_packaging_code\": \"1H1\", \"carriers\": [{ \"name\": \"DHL\" }, { \"name\": \"Fedex\" }] }'"
+			},
+			"response": []
+		},
+		{
+			"name": "consulta orden",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token token=SXUXOIYMOxSSRk84f-uYCGnhnDsizMII1on7AQTXP48"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://api-demo.skydropx.com/v1/shipments/390802",
+					"protocol": "https",
+					"host": [
+						"api-demo",
+						"skydropx",
+						"com"
+					],
+					"path": [
+						"v1",
+						"shipments",
+						"390802"
+					]
+				},
+				"description": "Generated from cURL: curl --location 'https://api-demo.skydropx.com/v1/shipments/390805' \\\n--header 'Authorization: Token token=SXUXOIYMOxSSRk84f-uYCGnhnDsizMII1on7AQTXP48' \\\n--header 'Content-Type: application/json'"
+			},
+			"response": []
+		},
+		{
+			"name": "labels",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token token=SXUXOIYMOxSSRk84f-uYCGnhnDsizMII1on7AQTXP48"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://api-demo.skydropx.com/v1/labels",
+					"protocol": "https",
+					"host": [
+						"api-demo",
+						"skydropx",
+						"com"
+					],
+					"path": [
+						"v1",
+						"labels"
+					]
+				},
+				"description": "Generated from cURL: curl \"https://api.skydropx.com/v1/labels\" \\\r\n-H \"Authorization: Token token=YOUR_API_KEY\" \\\r\n-H \"Content-Type: application/json\""
+			},
+			"response": []
+		}
+	]
+}
