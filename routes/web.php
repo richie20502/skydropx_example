@@ -16,17 +16,18 @@ use App\Http\Controllers\SkydropxController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 
 Route::get('/shipment-form', function () {
     return view('shipment/shipment-form');
-});
+})->name('shipment-form');
+
 Route::post('/generate-shipment', [SkydropxController::class, 'generateShipment'])->name('generate.shipment');
 
 
 Route::get('/quotation-form', function () {
     return view('quotation/quotation-form');
-});
+})->name('quotation-form');
 
 Route::post('/quotations', [SkydropxController::class, 'getQuotation'])->name('get.quotation');
