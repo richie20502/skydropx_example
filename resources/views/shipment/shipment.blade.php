@@ -6,26 +6,29 @@
     <title>Shipment Details</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
 </head>
-<body>
-    <div class="container mt-4">
-        <h1 class="mb-4">Shipment Details</h1>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="text-center mb-5">
+            <h1 class="text-primary">Shipment Details</h1>
+            <p class="text-secondary">Review the details of your shipment below</p>
+        </div>
 
         <!-- Shipment General Info -->
-        <div class="card mb-4">
-            <div class="card-header">
-                <h3>General Information</h3>
+        <div class="card shadow mb-4">
+            <div class="card-header bg-primary text-white">
+                <h3 class="card-title mb-0">General Information</h3>
             </div>
             <div class="card-body">
-                <p><strong>Status:</strong> {{ $shipment['data']['attributes']['status'] }}</p>
+                <p><strong>Status:</strong> <span class="badge bg-success">{{ $shipment['data']['attributes']['status'] }}</span></p>
                 <p><strong>Created At:</strong> {{ $shipment['data']['attributes']['created_at'] }}</p>
                 <p><strong>Updated At:</strong> {{ $shipment['data']['attributes']['updated_at'] }}</p>
             </div>
         </div>
 
         <!-- Address From -->
-        <div class="card mb-4">
-            <div class="card-header">
-                <h3>Address From</h3>
+        <div class="card shadow mb-4">
+            <div class="card-header bg-secondary text-white">
+                <h3 class="card-title mb-0">Address From</h3>
             </div>
             <div class="card-body">
                 @php
@@ -43,9 +46,9 @@
         </div>
 
         <!-- Address To -->
-        <div class="card mb-4">
-            <div class="card-header">
-                <h3>Address To</h3>
+        <div class="card shadow mb-4">
+            <div class="card-header bg-secondary text-white">
+                <h3 class="card-title mb-0">Address To</h3>
             </div>
             <div class="card-body">
                 @php
@@ -63,9 +66,9 @@
         </div>
 
         <!-- Parcel Info -->
-        <div class="card mb-4">
-            <div class="card-header">
-                <h3>Parcel Details</h3>
+        <div class="card shadow mb-4">
+            <div class="card-header bg-info text-white">
+                <h3 class="card-title mb-0">Parcel Details</h3>
             </div>
             <div class="card-body">
                 @php
@@ -77,13 +80,13 @@
         </div>
 
         <!-- Rates -->
-        <div class="card">
-            <div class="card-header">
-                <h3>Shipping Rates</h3>
+        <div class="card shadow">
+            <div class="card-header bg-dark text-white">
+                <h3 class="card-title mb-0">Shipping Rates</h3>
             </div>
             <div class="card-body">
-                <table class="table table-bordered">
-                    <thead>
+                <table class="table table-striped table-bordered">
+                    <thead class="table-dark">
                         <tr>
                             <th>Provider</th>
                             <th>Service Level</th>
@@ -107,5 +110,7 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
