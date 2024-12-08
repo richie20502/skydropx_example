@@ -150,7 +150,7 @@
 			"response": []
 		},
 		{
-			"name": "https://api.skydropx.com/v1/shipments",
+			"name": "create shipment",
 			"request": {
 				"method": "POST",
 				"header": [
