@@ -31,3 +31,10 @@ Route::get('/quotation-form', function () {
 })->name('quotation-form');
 
 Route::post('/quotations', [SkydropxController::class, 'getQuotation'])->name('get.quotation');
+
+
+
+use App\Http\Controllers\EnviaController;
+
+Route::get('shipments/form', [EnviaController::class, 'showForm'])->name('shipments.form');
+Route::post('shipments', [EnviaController::class, 'createShipment'])->name('shipments.create');
