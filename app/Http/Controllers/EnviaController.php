@@ -86,4 +86,94 @@ class EnviaController extends Controller
             return view('shipments.result', ['error' => $e->getMessage()]);
         }
     }
+
+
+    public function showRequestForm()
+    {
+        return view('envia.quote.quote_from');
+    }
+
+
+    public function sendRequest()
+    {
+        $payload = [
+            "origin" => [
+                "name" => "USA",
+                "company" => "enviacommarcelo",
+                "email" => "juanpedrovazez@hotmail.com",
+                "phone" => "8182000536",
+                "street" => "351523",
+                "number" => "crescent ave",
+                "district" => "other",
+                "city" => "cuajimalpa",
+                "state" => "cmx",
+                "country" => "MX",
+                "postalCode" => "05000",
+                "reference" => "",
+                "coordinates" => [
+                    "latitude" => "19.357850",
+                    "longitude" => "-99.290440",
+                ],
+            ],
+            "destination" => [
+                "name" => "francisco",
+                "company" => "",
+                "email" => "",
+                "phone" => "8180180543",
+                "street" => "avenida revolución",
+                "number" => "1500",
+                "district" => "san angel",
+                "city" => "ciudad de méxico",
+                "state" => "cmx",
+                "country" => "MX",
+                "postalCode" => "01000",
+                "reference" => "",
+                "coordinates" => [
+                    "latitude" => "19.348778",
+                    "longitude" => "-99.189602",
+                ],
+            ],
+            "packages" => [
+                [
+                    "content" => "zapatos",
+                    "amount" => 1,
+                    "type" => "box",
+                    "weight" => 1,
+                    "insurance" => 0,
+                    "declaredValue" => 0,
+                    "weightUnit" => "LB",
+                    "lengthUnit" => "IN",
+                    "dimensions" => [
+                        "length" => 11,
+                        "width" => 15,
+                        "height" => 20,
+                    ],
+                ],
+            ],
+            "shipment" => [
+                "carrier" => "DHL",
+                "type" => 1,
+            ],
+            "settings" => [
+                "currency" => "MXN",
+            ],
+        ];
+
+        $client = new Client();
+
+        try {
+            $response = $client->post('https://api-test.envia.com/ship/rate/', [
+                'headers' => [
+                    'Content-Type' => 'application/json',
+                    'Authorization' => 'Bearer 4e6ea14b99b91a9317da7d1c5227a8ff280452fe4c40b3fee25dbaa9ae7e9f2a',
+                ],
+                'json' => $payload,
+            ]);
+
+            $responseBody = json_decode($response->getBody(), true);
+            return response()->json($responseBody);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
 }

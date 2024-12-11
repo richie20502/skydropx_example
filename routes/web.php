@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SkydropxController;
+use App\Http\Controllers\EnviaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +35,10 @@ Route::post('/quotations', [SkydropxController::class, 'getQuotation'])->name('g
 
 
 
-use App\Http\Controllers\EnviaController;
 
 Route::get('shipments/form', [EnviaController::class, 'showForm'])->name('shipments.form');
 Route::post('shipments', [EnviaController::class, 'createShipment'])->name('shipments.create');
+
+
+Route::get('/envia-request', [EnviaController::class, 'showRequestForm']);
+Route::post('/enviar-cotizacion', [EnviaController::class, 'sendRequest']);
