@@ -171,7 +171,9 @@ class EnviaController extends Controller
             ]);
 
             $responseBody = json_decode($response->getBody(), true);
-            return response()->json($responseBody);
+
+            return view('envia.quote.quoute_detail', ['shippingRates' => $responseBody['data']]);
+
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
