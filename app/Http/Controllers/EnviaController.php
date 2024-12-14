@@ -7,6 +7,7 @@ use GuzzleHttp\Exception\RequestException;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Exception;
+use Illuminate\Support\Facades\Log;
 
 class EnviaController extends Controller
 {
@@ -94,69 +95,69 @@ class EnviaController extends Controller
     }
 
 
-    public function sendRequest()
+    public function sendRequest(Request $request)
     {
+        
         $payload = [
-            "origin" => [
-                "name" => "USA",
-                "company" => "enviacommarcelo",
-                "email" => "juanpedrovazez@hotmail.com",
-                "phone" => "8182000536",
-                "street" => "351523",
-                "number" => "crescent ave",
-                "district" => "other",
-                "city" => "cuajimalpa",
-                "state" => "cmx",
-                "country" => "MX",
-                "postalCode" => "05000",
-                "reference" => "",
-                "coordinates" => [
-                    "latitude" => "19.357850",
-                    "longitude" => "-99.290440",
-                ],
+            'origin' => [
+                'name' => 'USA',
+                'company' => 'enviacommarcelo',
+                'email' => 'juanpedrovazez@hotmail.com',
+                'phone' => '8182000536',
+                'street' => '351523',
+                'number' => 'crescent ave',
+                'district' => 'other',
+                'city' => 'cuajimalpa',
+                'state' => 'cmx',
+                'country' => 'MX',
+                'postalCode' => '05000',
+                'reference' => '',
+                'coordinates' => [
+                    'latitude' => '19.357850',
+                    'longitude' => '-99.290440'
+                ]
             ],
-            "destination" => [
-                "name" => "francisco",
-                "company" => "",
-                "email" => "",
-                "phone" => "8180180543",
-                "street" => "avenida revolución",
-                "number" => "1500",
-                "district" => "san angel",
-                "city" => "ciudad de méxico",
-                "state" => "cmx",
-                "country" => "MX",
-                "postalCode" => "01000",
-                "reference" => "",
-                "coordinates" => [
-                    "latitude" => "19.348778",
-                    "longitude" => "-99.189602",
-                ],
+            'destination' => [
+                'name' => 'francisco',
+                'company' => '',
+                'email' => '',
+                'phone' => '8180180543',
+                'street' => 'avenida revolución',
+                'number' => '1500',
+                'district' => 'san angel',
+                'city' => 'ciudad de méxico',
+                'state' => 'cmx',
+                'country' => 'MX',
+                'postalCode' => '01000',
+                'reference' => '',
+                'coordinates' => [
+                    'latitude' => '19.348778',
+                    'longitude' => '-99.189602'
+                ]
             ],
-            "packages" => [
+            'packages' => [
                 [
-                    "content" => "zapatos",
-                    "amount" => 1,
-                    "type" => "box",
-                    "weight" => 1,
-                    "insurance" => 0,
-                    "declaredValue" => 0,
-                    "weightUnit" => "LB",
-                    "lengthUnit" => "IN",
-                    "dimensions" => [
-                        "length" => 11,
-                        "width" => 15,
-                        "height" => 20,
-                    ],
-                ],
+                    'content' => 'zapatos',
+                    'amount' => 1,
+                    'type' => 'box',
+                    'weight' => 1,
+                    'insurance' => 0,
+                    'declaredValue' => 0,
+                    'weightUnit' => 'KG',
+                    'dimensions' => [
+                        'length' => 15,
+                        'width' => 10,
+                        'height' => 10
+                    ]
+                ]
             ],
-            "shipment" => [
-                "carrier" => "DHL",
-                "type" => 1,
+            'shipment' => [
+                'carrier' => 'DHL',
+                'type' => 1
             ],
-            "settings" => [
-                "currency" => "MXN",
-            ],
+            'settings' => [
+                'currency' => 'MXN'
+            ]
         ];
 
         $client = new Client();
@@ -176,6 +177,83 @@ class EnviaController extends Controller
 
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
+
+    public function showFrom2(){
+        return view('envia.tracking.tracking_form');
+    }
+    public function createShipment2(Request $request)
+    {
+        Log::info($request->all());
+        // Validar los datos de entrada
+        $validatedData = $request->validate([
+            'origin.name' => 'required|string|max:255',
+            'origin.phone' => 'required|string|max:20',
+            'origin.street' => 'required|string|max:255',
+            'origin.postal_code' => 'required|string|max:10',
+            'destination.name' => 'required|string|max:255',
+            'destination.phone' => 'required|string|max:20',
+            'destination.street' => 'required|string|max:255',
+            'destination.postal_code' => 'required|string|max:10',
+            'packages' => 'required|array',
+            'packages.*.weight' => 'required|numeric|min:0',
+            'packages.*.length' => 'required|numeric|min:0',
+            'packages.*.width' => 'required|numeric|min:0',
+            'packages.*.height' => 'required|numeric|min:0',
+            'packages.*.content' => 'required|string|max:255',
+        ]);
+
+        Log::info("kjkjkjkjkjkjk");
+        $shipmentData = [
+            'origin' => [
+                'name' => $validatedData['origin']['name'],
+                'phone' => $validatedData['origin']['phone'],
+                'street' => $validatedData['origin']['street'],
+                'postal_code' => $validatedData['origin']['postal_code'],
+                'country_code' => 'MX', // Código del país
+            ],
+            'destination' => [
+                'name' => $validatedData['destination']['name'],
+                'phone' => $validatedData['destination']['phone'],
+                'street' => $validatedData['destination']['street'],
+                'postal_code' => $validatedData['destination']['postal_code'],
+                'country_code' => 'MX', // Código del país
+            ],
+            'packages' => $validatedData['packages'],
+        ];
+
+        try {
+            // Crear cliente HTTP para interactuar con la API de Envia.com
+            $client = new Client([
+                'base_uri' => env('ENVIA_API_URL'),
+                'headers' => [
+                    'Authorization' => 'Bearer ' . env('ENVIA_API_KEY'),
+                    'Content-Type' => 'application/json',
+                ],
+            ]);
+
+            // Enviar solicitud POST a la API
+            $response = $client->post('/shipments', [
+                'json' => $shipmentData,
+            ]);
+
+            // Decodificar la respuesta de la API
+            $responseData = json_decode($response->getBody(), true);
+
+            Log::info($responseData);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Envío creado con éxito.',
+                'data' => $responseData,
+            ]);
+        } catch (\Exception $e) {
+            Log::info($e);
+            return response()->json([
+                'success' => false,
+                'message' => 'Error al crear el envío: ' . $e->getMessage(),
+            ], 500);
         }
     }
 }

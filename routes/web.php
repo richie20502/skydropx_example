@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SkydropxController;
 use App\Http\Controllers\EnviaController;
+use App\Http\Controllers\Evia2Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,15 @@ Route::post('shipments', [EnviaController::class, 'createShipment'])->name('ship
 
 Route::get('/envia-request', [EnviaController::class, 'showRequestForm']);
 Route::post('/enviar-cotizacion', [EnviaController::class, 'sendRequest']);
+
+
+
+Route::get('/envio_envia', [EnviaController::class, 'showFrom2']);
+Route::post('/api/shipments', [EnviaController::class, 'createShipment2']);
+
+
+
+
+Route::get('/shipments/create', [Evia2Controller::class, 'index'])->name('shipments.create');
+Route::post('/shipments', [Evia2Controller::class, 'createShipment'])->name('shipments.store');
+Route::post('/shipments/track', [Evia2Controller::class, 'trackShipment'])->name('shipments.track');
