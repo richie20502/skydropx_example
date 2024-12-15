@@ -87,6 +87,168 @@
 				"description": "Generated from cURL: curl --location -g 'https://{{base_url}}.envia.com/ship/generate/' \\\r\n--header 'Content-Type: application/json' \\\r\n--header 'Authorization: Bearer <Token>' \\\r\n--data-raw '{\r\n    \"origin\": {\r\n        \"name\": \"oscar mx\",\r\n        \"company\": \"oskys factory\",\r\n        \"email\": \"osgosf8@gmail.com\",\r\n        \"phone\": \"8116300800\",\r\n        \"street\": \"av vasconcelos\",\r\n        \"number\": \"1400\",\r\n        \"district\": \"mirasierra\",\r\n        \"city\": \"Monterrey\",\r\n        \"state\": \"NL\",\r\n        \"country\": \"MX\",\r\n        \"postalCode\": \"66236\",\r\n        \"reference\": \"\"\r\n    },\r\n    \"destination\": {\r\n        \"name\": \"oscar\",\r\n        \"company\": \"empresa\",\r\n        \"email\": \"osgosf8@gmail.com\",\r\n        \"phone\": \"8116300800\",\r\n        \"street\": \"av vasconcelos\",\r\n        \"number\": \"1400\",\r\n        \"district\": \"palo blanco\",\r\n        \"city\": \"monterrey\",\r\n        \"state\": \"NL\",\r\n        \"country\": \"MX\",\r\n        \"postalCode\": \"66240\",\r\n        \"reference\": \"\"\r\n    },\r\n    \"packages\": [\r\n        {\r\n            \"content\": \"camisetas rojas\",\r\n            \"amount\": 2,\r\n            \"type\": \"box\",\r\n            \"dimensions\": {\r\n                \"length\": 2,\r\n                \"width\": 5,\r\n                \"height\": 5\r\n            },\r\n            \"weight\": 63,\r\n            \"insurance\": 0,\r\n            \"declaredValue\": 400,\r\n            \"weightUnit\": \"KG\",\r\n            \"lengthUnit\": \"CM\"\r\n        },\r\n        {\r\n            \"content\": \"camisetas rojas\",\r\n            \"amount\": 2,\r\n            \"type\": \"box\",\r\n            \"dimensions\": {\r\n                \"length\": 1,\r\n                \"width\": 17,\r\n                \"height\": 2\r\n            },\r\n            \"weight\": 5,\r\n            \"insurance\": 400,\r\n            \"declaredValue\": 400,\r\n            \"weightUnit\": \"KG\",\r\n            \"lengthUnit\": \"CM\"\r\n        }\r\n    ],\r\n    \"shipment\": {\r\n        \"carrier\": \"fedex\",\r\n        \"service\": \"express\",\r\n        \"type\": 1\r\n    },\r\n    \"settings\": {\r\n        \"printFormat\": \"PDF\",\r\n        \"printSize\": \"STOCK_4X6\",\r\n        \"comments\": \"comentarios de el envío\"\r\n    }\r\n}'"
 			},
 			"response": []
+		},
+		{
+			"name": "https://api.envia.com/ship/generate/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 4e6ea14b99b91a9317da7d1c5227a8ff280452fe4c40b3fee25dbaa9ae7e9f2a"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"origin\": {\r\n        \"name\": \"Juan Pérez\",\r\n        \"company\": \"Mi Empresa\",\r\n        \"email\": \"juanperez@gmail.com\",\r\n        \"phone\": \"5544332211\",\r\n        \"street\": \"Avenida Reforma\",\r\n        \"number\": \"100\",\r\n        \"district\": \"Centro\",\r\n        \"city\": \"Ciudad de México\",\r\n        \"state\": \"CDMX\",\r\n        \"country\": \"MX\",\r\n        \"postalCode\": \"06600\",\r\n        \"reference\": \"Oficina principal\"\r\n    },\r\n    \"destination\": {\r\n        \"name\": \"María López\",\r\n        \"company\": \"Otra Empresa\",\r\n        \"email\": \"maria.lopez@gmail.com\",\r\n        \"phone\": \"5533221100\",\r\n        \"street\": \"Calle Juárez\",\r\n        \"number\": \"200\",\r\n        \"district\": \"Chapultepec\",\r\n        \"city\": \"Monterrey\",\r\n        \"state\": \"NL\",\r\n        \"country\": \"MX\",\r\n        \"postalCode\": \"64000\",\r\n        \"reference\": \"Departamento 5B\"\r\n    },\r\n    \"packages\": [\r\n        {\r\n            \"content\": \"Zapatos\",\r\n            \"amount\": 1,\r\n            \"type\": \"box\",\r\n            \"dimensions\": {\r\n                \"length\": 30,\r\n                \"width\": 20,\r\n                \"height\": 10\r\n            },\r\n            \"weight\": 1.5,\r\n            \"insurance\": 500,\r\n            \"declaredValue\": 500,\r\n            \"weightUnit\": \"KG\",\r\n            \"lengthUnit\": \"CM\"\r\n        }\r\n    ],\r\n    \"shipment\": {\r\n        \"carrier\": \"fedex\",\r\n        \"service\": \"express\",\r\n        \"type\": 1\r\n    },\r\n    \"settings\": {\r\n        \"printFormat\": \"PDF\",\r\n        \"printSize\": \"STOCK_4X6\",\r\n        \"comments\": \"Entrega urgente\"\r\n    },\r\n    \"currencyCode\": \"MXN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.envia.com/ship/generate/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"envia",
+						"com"
+					],
+					"path": [
+						"ship",
+						"generate",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl --location 'https://api.envia.com/ship/generate/' \\\r\n--header 'Content-Type: application/json' \\\r\n--header 'Authorization: Bearer 4e6ea14b99b91a9317da7d1c5227a8ff280452fe4c40b3fee25dbaa9ae7e9f2a' \\\r\n--data-raw '{\r\n    \"origin\": {\r\n        \"name\": \"Juan Pérez\",\r\n        \"company\": \"Mi Empresa\",\r\n        \"email\": \"juanperez@gmail.com\",\r\n        \"phone\": \"5544332211\",\r\n        \"street\": \"Avenida Reforma\",\r\n        \"number\": \"100\",\r\n        \"district\": \"Centro\",\r\n        \"city\": \"Ciudad de México\",\r\n        \"state\": \"CDMX\",\r\n        \"country\": \"MX\",\r\n        \"postalCode\": \"06600\",\r\n        \"reference\": \"Oficina principal\"\r\n    },\r\n    \"destination\": {\r\n        \"name\": \"María López\",\r\n        \"company\": \"Otra Empresa\",\r\n        \"email\": \"maria.lopez@gmail.com\",\r\n        \"phone\": \"5533221100\",\r\n        \"street\": \"Calle Juárez\",\r\n        \"number\": \"200\",\r\n        \"district\": \"Chapultepec\",\r\n        \"city\": \"Monterrey\",\r\n        \"state\": \"NL\",\r\n        \"country\": \"MX\",\r\n        \"postalCode\": \"64000\",\r\n        \"reference\": \"Departamento 5B\"\r\n    },\r\n    \"packages\": [\r\n        {\r\n            \"content\": \"Zapatos\",\r\n            \"amount\": 1,\r\n            \"type\": \"box\",\r\n            \"dimensions\": {\r\n                \"length\": 30,\r\n                \"width\": 20,\r\n                \"height\": 10\r\n            },\r\n            \"weight\": 1.5,\r\n            \"insurance\": 500,\r\n            \"declaredValue\": 500,\r\n            \"weightUnit\": \"KG\",\r\n            \"lengthUnit\": \"CM\"\r\n        }\r\n    ],\r\n    \"shipment\": {\r\n        \"carrier\": \"fedex\",\r\n        \"service\": \"express\",\r\n        \"type\": 1\r\n    },\r\n    \"settings\": {\r\n        \"printFormat\": \"PDF\",\r\n        \"printSize\": \"STOCK_4X6\",\r\n        \"comments\": \"Entrega urgente\"\r\n    },\r\n    \"currencyCode\": \"MXN\"\r\n}'\r\n\r\n "
+			},
+			"response": []
+		},
+		{
+			"name": "rates",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer TU_API_KEY_AQUI"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"origin\": {\r\n        \"postal_code\": \"64000\",\r\n        \"country_code\": \"MX\"\r\n    },\r\n    \"destination\": {\r\n        \"postal_code\": \"65000\",\r\n        \"country_code\": \"MX\"\r\n    },\r\n    \"package\": {\r\n        \"weight\": 1,\r\n        \"width\": 10,\r\n        \"height\": 10,\r\n        \"length\": 10\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-test.envia.com/rates",
+					"protocol": "https",
+					"host": [
+						"api-test",
+						"envia",
+						"com"
+					],
+					"path": [
+						"rates"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST \"https://api-test.envia.com/rates\" \\\r\n-H \"Authorization: Bearer TU_API_KEY_AQUI\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n    \"origin\": {\r\n        \"postal_code\": \"64000\",\r\n        \"country_code\": \"MX\"\r\n    },\r\n    \"destination\": {\r\n        \"postal_code\": \"65000\",\r\n        \"country_code\": \"MX\"\r\n    },\r\n    \"package\": {\r\n        \"weight\": 1,\r\n        \"width\": 10,\r\n        \"height\": 10,\r\n        \"length\": 10\r\n    }\r\n}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "generate  create success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 4e6ea14b99b91a9317da7d1c5227a8ff280452fe4c40b3fee25dbaa9ae7e9f2a"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"origin\": {\r\n        \"name\": \"oscar mx\",\r\n        \"company\": \"oskys factory\",\r\n        \"email\": \"osgosf8@gmail.com\",\r\n        \"phone\": \"8116300800\",\r\n        \"street\": \"av vasconcelos\",\r\n        \"number\": \"1400\",\r\n        \"district\": \"mirasierra\",\r\n        \"city\": \"Monterrey\",\r\n        \"state\": \"NL\",\r\n        \"country\": \"MX\",\r\n        \"postalCode\": \"66236\",\r\n        \"reference\": \"\"\r\n    },\r\n    \"destination\": {\r\n        \"name\": \"oscar\",\r\n        \"company\": \"empresa\",\r\n        \"email\": \"osgosf8@gmail.com\",\r\n        \"phone\": \"8116300800\",\r\n        \"street\": \"av vasconcelos\",\r\n        \"number\": \"1400\",\r\n        \"district\": \"palo blanco\",\r\n        \"city\": \"monterrey\",\r\n        \"state\": \"NL\",\r\n        \"country\": \"MX\",\r\n        \"postalCode\": \"66240\",\r\n        \"reference\": \"\"\r\n    },\r\n    \"packages\": [\r\n        {\r\n            \"content\": \"camisetas rojas\",\r\n            \"amount\": 2,\r\n            \"type\": \"box\",\r\n            \"dimensions\": {\r\n                \"length\": 2,\r\n                \"width\": 5,\r\n                \"height\": 5\r\n            },\r\n            \"weight\": 63,\r\n            \"insurance\": 0,\r\n            \"declaredValue\": 400,\r\n            \"weightUnit\": \"KG\",\r\n            \"lengthUnit\": \"CM\"\r\n        },\r\n        {\r\n            \"content\": \"camisetas rojas\",\r\n            \"amount\": 2,\r\n            \"type\": \"box\",\r\n            \"dimensions\": {\r\n                \"length\": 1,\r\n                \"width\": 17,\r\n                \"height\": 2\r\n            },\r\n            \"weight\": 5,\r\n            \"insurance\": 400,\r\n            \"declaredValue\": 400,\r\n            \"weightUnit\": \"KG\",\r\n            \"lengthUnit\": \"CM\"\r\n        }\r\n    ],\r\n    \"shipment\": {\r\n        \"carrier\": \"dhl\",\r\n        \"service\": \"express\",\r\n        \"type\": 1,\r\n        \"currency\": \"MXN\"\r\n    },\r\n    \"settings\": {\r\n        \"printFormat\": \"PDF\",\r\n        \"printSize\": \"STOCK_4X6\",\r\n        \"comments\": \"comentarios de el envío\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-test.envia.com/ship/generate/",
+					"protocol": "https",
+					"host": [
+						"api-test",
+						"envia",
+						"com"
+					],
+					"path": [
+						"ship",
+						"generate",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl --location -g 'https://api-test.envia.com/ship/generate/' \\\r\n--header 'Content-Type: application/json' \\\r\n--header 'Authorization: Bearer 4e6ea14b99b91a9317da7d1c5227a8ff280452fe4c40b3fee25dbaa9ae7e9f2a' \\\r\n--data-raw '{\r\n    \"origin\": {\r\n        \"name\": \"oscar mx\",\r\n        \"company\": \"oskys factory\",\r\n        \"email\": \"osgosf8@gmail.com\",\r\n        \"phone\": \"8116300800\",\r\n        \"street\": \"av vasconcelos\",\r\n        \"number\": \"1400\",\r\n        \"district\": \"mirasierra\",\r\n        \"city\": \"Monterrey\",\r\n        \"state\": \"NL\",\r\n        \"country\": \"MX\",\r\n        \"postalCode\": \"66236\",\r\n        \"reference\": \"\"\r\n    },\r\n    \"destination\": {\r\n        \"name\": \"oscar\",\r\n        \"company\": \"empresa\",\r\n        \"email\": \"osgosf8@gmail.com\",\r\n        \"phone\": \"8116300800\",\r\n        \"street\": \"av vasconcelos\",\r\n        \"number\": \"1400\",\r\n        \"district\": \"palo blanco\",\r\n        \"city\": \"monterrey\",\r\n        \"state\": \"NL\",\r\n        \"country\": \"MX\",\r\n        \"postalCode\": \"66240\",\r\n        \"reference\": \"\"\r\n    },\r\n    \"packages\": [\r\n        {\r\n            \"content\": \"camisetas rojas\",\r\n            \"amount\": 2,\r\n            \"type\": \"box\",\r\n            \"dimensions\": {\r\n                \"length\": 2,\r\n                \"width\": 5,\r\n                \"height\": 5\r\n            },\r\n            \"weight\": 63,\r\n            \"insurance\": 0,\r\n            \"declaredValue\": 400,\r\n            \"weightUnit\": \"KG\",\r\n            \"lengthUnit\": \"CM\"\r\n        },\r\n        {\r\n            \"content\": \"camisetas rojas\",\r\n            \"amount\": 2,\r\n            \"type\": \"box\",\r\n            \"dimensions\": {\r\n                \"length\": 1,\r\n                \"width\": 17,\r\n                \"height\": 2\r\n            },\r\n            \"weight\": 5,\r\n            \"insurance\": 400,\r\n            \"declaredValue\": 400,\r\n            \"weightUnit\": \"KG\",\r\n            \"lengthUnit\": \"CM\"\r\n        }\r\n    ],\r\n    \"shipment\": {\r\n        \"carrier\": \"fedex\",\r\n        \"service\": \"express\",\r\n        \"type\": 1\r\n    },\r\n    \"settings\": {\r\n        \"printFormat\": \"PDF\",\r\n        \"printSize\": \"STOCK_4X6\",\r\n        \"comments\": \"comentarios de el envío\"\r\n    }\r\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "rate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 4e6ea14b99b91a9317da7d1c5227a8ff280452fe4c40b3fee25dbaa9ae7e9f2a"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"origin\": {\r\n        \"name\": \"USA\",\r\n        \"company\": \"enviacommarcelo\",\r\n        \"email\": \"juanpedrovazez@hotmail.com\",\r\n        \"phone\": \"8182000536\",\r\n        \"street\": \"351523\",\r\n        \"number\": \"crescent ave\",\r\n        \"district\": \"other\",\r\n        \"city\": \"dallas\",\r\n        \"state\": \"tx\",\r\n        \"country\": \"US\",\r\n        \"postalCode\": \"75205\",\r\n        \"reference\": \"\",\r\n        \"coordinates\": {\r\n            \"latitude\": \"32.776272\",\r\n            \"longitude\": \"-96.796856\"\r\n        }\r\n    },\r\n    \"destination\": {\r\n        \"name\": \"francisco\",\r\n        \"company\": \"\",\r\n        \"email\": \"\",\r\n        \"phone\": \"8180180543\",\r\n        \"street\": \"4th street\",\r\n        \"number\": \"24\",\r\n        \"district\": \"other\",\r\n        \"city\": \"reno\",\r\n        \"state\": \"nv\",\r\n        \"country\": \"US\",\r\n        \"postalCode\": \"89503\",\r\n        \"reference\": \"\",\r\n        \"coordinates\": {\r\n            \"latitude\": \"39.512132\",\r\n            \"longitude\": \"-119.906585\"\r\n        }\r\n    },\r\n    \"packages\": [\r\n        {\r\n            \"content\": \"zapatos\",\r\n            \"amount\": 1,\r\n            \"type\": \"box\",\r\n            \"weight\": 1,\r\n            \"insurance\": 0,\r\n            \"declaredValue\": 0,\r\n            \"weightUnit\": \"LB\",\r\n            \"lengthUnit\": \"IN\",\r\n            \"dimensions\": {\r\n                \"length\": 11,\r\n                \"width\": 15,\r\n                \"height\": 20\r\n            }\r\n        }\r\n    ],\r\n    \"shipment\": {\r\n        \"carrier\": \"usps\",\r\n        \"type\": 1\r\n    },\r\n    \"settings\": {\r\n        \"currency\": \"USD\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-test.envia.com/ship/rate/",
+					"protocol": "https",
+					"host": [
+						"api-test",
+						"envia",
+						"com"
+					],
+					"path": [
+						"ship",
+						"rate",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl --location 'https://api-test.envia.com/ship/rate/' \\\r\n--header 'Content-Type: application/json' \\\r\n--header 'Authorization: Bearer 4e6ea14b99b91a9317da7d1c5227a8ff280452fe4c40b3fee25dbaa9ae7e9f2a'\\\r\n--data-raw '{\r\n    \"origin\": {\r\n        \"name\": \"USA\",\r\n        \"company\": \"enviacommarcelo\",\r\n        \"email\": \"juanpedrovazez@hotmail.com\",\r\n        \"phone\": \"8182000536\",\r\n        \"street\": \"351523\",\r\n        \"number\": \"crescent ave\",\r\n        \"district\": \"other\",\r\n        \"city\": \"dallas\",\r\n        \"state\": \"tx\",\r\n        \"country\": \"US\",\r\n        \"postalCode\": \"75205\",\r\n        \"reference\": \"\",\r\n        \"coordinates\": {\r\n            \"latitude\": \"32.776272\",\r\n            \"longitude\": \"-96.796856\"\r\n        }\r\n    },\r\n    \"destination\": {\r\n        \"name\": \"francisco\",\r\n        \"company\": \"\",\r\n        \"email\": \"\",\r\n        \"phone\": \"8180180543\",\r\n        \"street\": \"4th street\",\r\n        \"number\": \"24\",\r\n        \"district\": \"other\",\r\n        \"city\": \"reno\",\r\n        \"state\": \"nv\",\r\n        \"country\": \"US\",\r\n        \"postalCode\": \"89503\",\r\n        \"reference\": \"\",\r\n        \"coordinates\": {\r\n            \"latitude\": \"39.512132\",\r\n            \"longitude\": \"-119.906585\"\r\n        }\r\n    },\r\n    \"packages\": [\r\n        {\r\n            \"content\": \"zapatos\",\r\n            \"amount\": 1,\r\n            \"type\": \"box\",\r\n            \"weight\": 1,\r\n            \"insurance\": 0,\r\n            \"declaredValue\": 0,\r\n            \"weightUnit\": \"LB\",\r\n            \"lengthUnit\": \"IN\",\r\n            \"dimensions\": {\r\n                \"length\": 11,\r\n                \"width\": 15,\r\n                \"height\": 20\r\n            }\r\n        }\r\n    ],\r\n    \"shipment\": {\r\n        \"carrier\": \"usps\",\r\n        \"type\": 1\r\n    },\r\n    \"settings\": {\r\n        \"currency\": \"USD\"\r\n    }\r\n}'"
+			},
+			"response": []
 		}
 	]
 }
